@@ -11,13 +11,16 @@ echo "🔧 Mise à jour du système..."
 sudo apt update && sudo apt upgrade -y
 
 echo "📦 Installation des outils de base..."
-sudo apt install -y build-essential curl wget git unzip gnupg lsb-release software-properties-common net-tools zsh ufw
+sudo apt install -y build-essential curl wget git unzip gnupg ca-certificates \ 
+lsb-release software-properties-common net-tools zsh ufw \
+build-essential software-properties-common apt-transport-https \
+tmux zsh neovim nano ufw net-tools lsb-release htop jq
 
 # --- PHP + Laravel ---
 echo "🐘 Installation de PHP 8.3 et extensions..."
 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt update
-sudo apt install -y php8.3 php8.3-cli php8.3-common php8.3-mbstring php8.3-xml php8.3-mysql php8.3-curl php8.3-zip php8.3-bcmath php8.3-tokenizer
+sudo apt install -y php8.3 php8.3-cli php8.3-fpm php8.3-common php8.3-mbstring php8.3-xml php8.3-mysql php8.3-curl php8.3-zip php8.3-bcmath php8.3-tokenizer php8.3-gd
 
 echo "📦 Installation de Composer et Laravel..."
 sudo apt install -y composer
