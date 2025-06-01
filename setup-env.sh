@@ -30,7 +30,7 @@ sudo apt install -y mysql-server
 
 # --- Java + Spring Boot ---
 echo "☕ Installation de Java 21 et Maven..."
-sudo apt install -y openjdk-21-jdk maven
+sudo apt install -y openjdk-21-jdk openjdk-17-jdk openjdk-11-jdk openjdk-8-jdk maven
 
 # --- Node.js + React ---
 echo "⚛️ Installation de Node.js 20, Yarn et Vite..."
@@ -60,17 +60,6 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt update && sudo apt install gh -y
 
-# --- Jenkins (facultatif) ---
-read -p "Souhaites-tu installer Jenkins ? (y/n) : " install_jenkins
-if [[ "$install_jenkins" == "y" ]]; then
-    echo "📦 Installation de Jenkins..."
-    sudo apt install -y openjdk-17-jre
-    curl -fsSL https://pkg.jenkins.io/debian/jenkins.io.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
-    echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
-    sudo apt update && sudo apt install -y jenkins
-    sudo systemctl enable jenkins && sudo systemctl start jenkins
-fi
-
 # --- VSCode ---
 echo "💻 Installation de Visual Studio Code..."
 sudo snap install code --classic
@@ -87,7 +76,7 @@ sudo ufw --force enable
 
 # --- Structure des dossiers ---
 echo "📁 Création de l’arborescence des projets..."
-mkdir -p ~/Projects/{laravel-app,spring-app,react-app}
+mkdir -p ~/Projects/{laravel-app,spring-app,react-app,django-app,flask-app}
 mkdir -p ~/ci_cd/github-actions
 mkdir -p ~/docker/nginx
 
