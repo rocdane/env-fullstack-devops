@@ -45,8 +45,8 @@ echo "☸️ Installation de MicroK8s..."
 sudo snap install microk8s --classic
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
-microk8s status --wait-ready
-microk8s enable dns registry ingress
+sudo microk8s status --wait-ready
+sudo microk8s enable dns registry ingress
 
 # --- Git & GitHub CLI ---
 echo "🔧 Installation de Git et GitHub CLI..."
@@ -56,9 +56,9 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt update && sudo apt install gh -y
 
-# --- VSCode ---
-echo "💻 Installation de Visual Studio Code..."
-sudo snap install code --classic
+# --- VSCode & Postman ---
+echo "💻 Installation de Visual Studio Code et Postman..."
+sudo snap install code postman --classic
 
 # --- Pare-feu de base ---
 echo "🛡️ Configuration UFW pour environnement fullstack + Docker + Kubernetes..."
