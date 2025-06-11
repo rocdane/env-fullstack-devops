@@ -26,7 +26,7 @@ echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> ~/.bashrc
 
 # --- Java + Spring Boot ---
 echo "☕ Installation de Java 21 et Maven..."
-sudo apt install -y openjdk-21-jdk openjdk-17-jdk openjdk-11-jdk openjdk-8-jdk maven
+sudo apt install -y openjdk-21-jdk openjdk-17-jdk openjdk-11-jdk openjdk-8-jdk maven gradle
 
 # --- Node.js + React ---
 echo "⚛️ Installation de Node.js 24, Yarn et Vite..."
