@@ -24,10 +24,6 @@ sudo apt install -y composer
 composer global require laravel/installer
 echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> ~/.bashrc
 
-# --- MySQL ---
-echo "🗃️ Installation de MySQL..."
-sudo apt install -y mysql-server
-
 # --- Java + Spring Boot ---
 echo "☕ Installation de Java 21 et Maven..."
 sudo apt install -y openjdk-21-jdk openjdk-17-jdk openjdk-11-jdk openjdk-8-jdk maven
