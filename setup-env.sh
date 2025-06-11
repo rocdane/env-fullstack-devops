@@ -20,7 +20,7 @@ sudo apt update
 sudo apt install -y php8.3 php8.3-cli php8.3-fpm php8.3-common php8.3-mbstring php8.3-xml php8.3-mysql php8.3-curl php8.3-zip php8.3-bcmath php8.3-tokenizer php8.3-gd
 
 echo "📦 Installation de Composer et Laravel..."
-sudo apt install -y composer
+sudo apt install -y composer php-intl
 composer global require laravel/installer
 echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> ~/.bashrc
 
